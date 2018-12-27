@@ -4,7 +4,7 @@ Add new group
 {block content}
 <div class='row justify-content-lg-center'>
 <div class=col-lg-5>
-<form n:name=groupForm>
+<form n:name=groupForm id=backgroundStyle>
 	<h4 n:block=title>Add new group</h4>
 	<div class=form-group>
 		<label>Name</label>
@@ -14,9 +14,3 @@ Add new group
 </form>
 </div>
 </div>
-{include scripts}
-<script>
-$(document).ready(function(){
-	$("form").css({"background-color": "#f7f7f9", "padding": "10pt"});
-});
-</script>

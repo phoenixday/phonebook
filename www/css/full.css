@@ -1,0 +1,9 @@
+#backgroundStyle{
+	background-color: #f7f7f9; 
+	padding: 10pt;
+}
+.card{
+	width: 18rem;
+	background-color: #f7f7f9;
+	margin: 10px;
+}

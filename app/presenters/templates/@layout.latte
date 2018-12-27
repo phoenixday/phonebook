@@ -13,7 +13,7 @@
 <body style="background: url('{$basePath}/img/background.jpg') no-repeat center center fixed; background-size: cover;
   ">
 	
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="background-color: #f7f7f9; padding: 10pt">{$flash->message}</div>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" id=backgroundStyle>{$flash->message}</div>
 
 	{ifset breadcrumb}
 	<nav aria-label="breadcrumb">
