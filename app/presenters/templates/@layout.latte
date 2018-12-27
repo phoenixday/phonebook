@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{$basePath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{$basePath}/css/full.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+	<title>{ifset title}{include title|stripHtml}{/ifset}</title>
+</head>
+
+<body style="background:  url('https://steamcdn-a.akamaihd.net/steam/apps/793370/ss_54293b0bd99bd792dbfa249a9948bbfc723adf25.1920x1080.jpg?t=1544029391' ) no-repeat center center fixed; background-size: cover;
+  ">
+	
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="background-color: #f7f7f9; padding: 10pt">{$flash->message}</div>
+
+	{ifset breadcrumb}
+	<nav aria-label="breadcrumb">
+  		<ol class="breadcrumb">
+    		<li class="breadcrumb-item"><a n:href="Homepage:">My contacts</a></li>
+    		<li class="breadcrumb-item active" aria-current="page">{include breadcrumb}</li>
+  		</ol>
+	</nav>
+	{/ifset}
+
+	<br>
+	{include content}
+
+	{block scripts}
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/vendor/jquery/jquery.min.js"></script>
+    <script src="{$basePath}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	{/block}
+</body>
+</html>

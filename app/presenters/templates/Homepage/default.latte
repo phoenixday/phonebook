@@ -1,0 +1,46 @@
+{block content}
+<div class=container style="background-color: #f7f7f9; padding: 10pt">
+	<h2 n:block="title" align=center style="font-family: 'Indie Flower', cursive; font-weight: bold">My contacts</h2>
+	<p><a n:href="Contact:create">Add new contact</a> | <a n:href="Group:create">Add new group</a></p>
+		<form n:name=selectForm>
+				<div class=form-row>
+					<div class=col-sm-3>
+						<div class=form-group>
+							<select class=form-control n:name=selectedGroup>
+							</select>
+						</div>
+					</div>	
+						<div class=col-sm>
+							<button type=submit class='btn btn-info' n:name=select>Show contacts</button>
+						</div>
+				</div>
+		</form>
+	{if count($contacts) > 0}
+		<table class='table table-striped'>
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Groups</th>
+			</tr>
+			<tr n:foreach="$contacts as $contact">
+				<td><a n:href="Contact:show $contact->id">{$contact->name} {$contact->surname}</a></td>
+				<td>{$contact->phone}</td>
+				<td>{$contact->email}</td>
+				<td class='groups'>{implode(', ', $contact->groups)}</td>
+			</tr>
+		</table>
+			<nav aria-label="Page navigation example">
+			 	<ul class="pagination justify-content-center">
+			 		{if !$paginator->isFirst()}
+			 			<li class="page-item"><a class="page-link" n:href="default, $paginator->page-1" tabindex="-1">Previous page</a></li>
+			 		{/if}
+			 		{if !$paginator->isLast()}
+			    		<li class="page-item"><a class="page-link" n:href="default, $paginator->page+1">Next page</a></li>
+			    	{/if}
+			  	</ul>
+			</nav>
+	{else}
+		<p>No friends :(</p>
+	{/if}
+</div>
