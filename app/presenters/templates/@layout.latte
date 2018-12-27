@@ -10,7 +10,7 @@
 	<title>{ifset title}{include title|stripHtml}{/ifset}</title>
 </head>
 
-<body style="background:  url('https://steamcdn-a.akamaihd.net/steam/apps/793370/ss_54293b0bd99bd792dbfa249a9948bbfc723adf25.1920x1080.jpg?t=1544029391' ) no-repeat center center fixed; background-size: cover;
+<body style="background: url('{$basePath}/img/background.jpg') no-repeat center center fixed; background-size: cover;
   ">
 	
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="background-color: #f7f7f9; padding: 10pt">{$flash->message}</div>
