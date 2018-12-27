@@ -2,11 +2,12 @@
 {$contact->name} {$contact->surname}
 {/block}
 {block content}
-<div class=card style="width: 18rem; background-color: #f7f7f9">
+
+<div class=card style="width: 18rem; background-color: #f7f7f9; margin: 10px">
 	<div class=card-body>
 		<h5 class=card-title n:block=title>{$contact->name} {$contact->surname}</h5>
 		<p class=card-text><label>Phone:</label> {$contact->phone}</p>
-		{if $contact->email}<p class=card-text><label>E-mail:</label> {$contact->email}</p>{/if}
+		{if $contact->email}<p class=card-text><label>Email: </label> {$contact->email}</p>{/if}
 		{if count($groups) > 0}
 		<p>Groups</p>
 		<ul>
@@ -15,9 +16,3 @@
 		{/if}
 	</div>
 </div>
-{include scripts}
-<script>
-$(document).ready(function(){
-});
-</script>
-{/block}
