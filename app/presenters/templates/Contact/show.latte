@@ -3,11 +3,11 @@
 {/block}
 {block content}
 
-<div class=card>
-	<div class=card-body>
-		<h5 class=card-title n:block=title>{$contact->name} {$contact->surname}</h5>
-		<p class=card-text><label>Phone:</label> {$contact->phone}</p>
-		{if $contact->email}<p class=card-text><label>Email: </label> {$contact->email}</p>{/if}
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title" n:block="title">{$contact->name} {$contact->surname}</h5>
+		<p class="card-text"><label>Phone:</label> {$contact->phone}</p>
+		{if $contact->email}<p class="card-text"><label>Email: </label> {$contact->email}</p>{/if}
 		{if count($groups) > 0}
 		<p>Groups</p>
 		<ul>

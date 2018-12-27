@@ -1,22 +1,22 @@
 {block content}
-<div class=container id=backgroundStyle>
-	<h2 n:block="title" align=center style="font-family: 'Indie Flower', cursive; font-weight: bold">My contacts</h2>
+<div class="container" id="backgroundStyle">
+	<h2 n:block="title" align="center" style="font-family: 'Indie Flower', cursive; font-weight: bold">My contacts</h2>
 	<p><a n:href="Contact:create">Add new contact</a> | <a n:href="Group:create">Add new group</a></p>
-		<form n:name=selectForm>
-				<div class=form-row>
-					<div class=col-sm-3>
-						<div class=form-group>
-							<select class=form-control n:name=selectedGroup>
+		<form n:name="selectForm">
+				<div class="form-row">
+					<div class="col-sm-3">
+						<div class="form-group">
+							<select class="form-control" n:name="selectedGroup">
 							</select>
 						</div>
 					</div>	
-						<div class=col-sm>
-							<button type=submit class='btn btn-info' n:name=select>Show contacts</button>
+						<div class="col-sm">
+							<button type="submit" class="btn btn-info" n:name="select">Show contacts</button>
 						</div>
 				</div>
 		</form>
 	{if count($contacts) > 0}
-		<table class='table table-striped'>
+		<table class="table table-striped">
 			<tr>
 				<th>Name</th>
 				<th>Phone</th>
@@ -27,7 +27,7 @@
 				<td><a n:href="Contact:show $contact->id">{$contact->name} {$contact->surname}</a></td>
 				<td>{$contact->phone}</td>
 				<td>{$contact->email}</td>
-				<td class='groups'>{implode(', ', $contact->groups)}</td>
+				<td class="groups">{implode(', ', $contact->groups)}</td>
 			</tr>
 		</table>
 			<nav aria-label="Page navigation example">
