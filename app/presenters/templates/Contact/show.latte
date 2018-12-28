@@ -1,11 +1,8 @@
-{block breadcrumb}
-{$contact->name} {$contact->surname}
-{/block}
 {block content}
 
 <div class="card">
 	<div class="card-body">
-		<h5 class="card-title" n:block="title">{$contact->name} {$contact->surname}</h5>
+		<h5 class="card-title" n:block="title">My contacts | {block breadcrumb}{$contact->name} {$contact->surname}{/block}</h5>
 		<p class="card-text"><label>Phone:</label> {$contact->phone}</p>
 		{if $contact->email}<p class="card-text"><label>Email: </label> {$contact->email}</p>{/if}
 		{if count($groups) > 0}
@@ -14,5 +11,9 @@
 			<li n:foreach="$groups as $group">{$group}</li>
 		</ul>	
 		{/if}
+		<div class="btn-group" role="group"> 
+			<a class="btn btn-success" n:href="edit $contact->id">Edit</a>
+			<button class="btn btn-danger">Delete</button>
+		</div>
 	</div>
 </div>

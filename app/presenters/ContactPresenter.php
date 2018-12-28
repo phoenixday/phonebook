@@ -58,4 +58,19 @@ class ContactPresenter extends Nette\Application\UI\Presenter
 		$this->flashMessage('Contact was added.');
 		$this->redirect('Homepage:');
 	}
+
+	public function actionEdit($id)
+	{
+		$contact = $this->contactManager->getContact($id);
+		if (!$contact)
+		{
+			$this->error('Contact not found.');
+		}
+		$this['contactForm']->setDefaults([
+				'name' => $contact->name,
+				'surname' => $contact->surname,
+				'phone' => $contact->phone,
+				'email' => $contact->email,		
+		]);
+	}
 }

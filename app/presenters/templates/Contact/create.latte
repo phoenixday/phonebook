@@ -1,32 +1,4 @@
-{block breadcrumb}
-Add new contact
-{/block}
-{block content}
-<div class="row justify-content-lg-center">
-<div class="col-lg-5">
-<form n:name="contactForm" id="backgroundStyle">
-	<h4 n:block="title">Add new contact</h4>
-	<div class="form-group">
-		<label>Name</label>
-		<input n:name="name" class="form-control">
-	</div>
-	<div class="form-group">
-		<label>Surname</label>
-		<input n:name="surname" class="form-control">
-	</div>
-	<div class="form-group">
-		<label>Phone</label>
-		<input n:name="phone" class="form-control" placeholder="+420...">
-	</div>
-	<div class="form-group">
-		<label>Email</label>
-		<input n:name="email" type="email" class="form-control" placeholder="email@example.com">
-	</div>
-	<div class="form-group">
-		<label>Select groups</label>
-		{input groups}
-	</div>
-	<button n:name="add" type="submit" class="btn btn-info">Add contact</button>
-</form>
-</div>
-</div>
+{layout '@contactForm.latte'}
+{block breadcrumb}Add new contact{/block}
+{block action}Add contact{/block}
+
