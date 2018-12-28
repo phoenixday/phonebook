@@ -54,8 +54,17 @@ class ContactPresenter extends Nette\Application\UI\Presenter
 
 	public function contactFormSucceeded(Form $form, \stdClass $values)
 	{
-		$this->contactManager->save($values);
-		$this->flashMessage('Contact was added.');
+		$contactId = $this->getParameter('id');
+		if ($contactId)
+		{
+			$this->contactManager->change($contactId, $values);
+			$this->flashMessage('Contact was edited.');	
+		}
+		else
+		{
+			$this->contactManager->save($values);
+			$this->flashMessage('Contact was added.');
+		}
 		$this->redirect('Homepage:');
 	}
 
@@ -72,5 +81,12 @@ class ContactPresenter extends Nette\Application\UI\Presenter
 				'phone' => $contact->phone,
 				'email' => $contact->email,		
 		]);
+	}
+
+	public function actionDelete($id)
+	{
+		$this->contactManager->delete($id);
+		$this->flashMessage('Contact was deleted.');
+		$this->redirect('Homepage:');
 	}
 }

@@ -48,4 +48,18 @@ class ContactManager
 			]);
 		}
 	}
+
+
+	public function delete($contactId)
+	{
+		$contact = $this->contacts->get($contactId); 
+		$contact->delete();
+		$this->database->table('contactGroups')->where('id_contact', $contactId)->delete();
+	}
+
+	public function change($contactId, $values)
+	{
+		$this->delete($contactId);
+		$this->save($values);
+	}
 }
