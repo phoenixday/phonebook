@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 27, 2018 at 03:16 PM
+-- Generation Time: Dec 28, 2018 at 11:31 AM
 -- Server version: 5.7.16
 -- PHP Version: 7.1.0
 
@@ -53,7 +53,12 @@ INSERT INTO `contactGroups` (`id`, `id_contact`, `id_group`) VALUES
 (19, 27, 3),
 (20, 27, 4),
 (21, 29, 2),
-(22, 29, 4);
+(22, 29, 4),
+(23, 30, 5),
+(24, 31, 4),
+(25, 31, 5),
+(26, 32, 2),
+(27, 32, 4);
 
 -- --------------------------------------------------------
 
@@ -81,8 +86,10 @@ INSERT INTO `contacts` (`id`, `name`, `surname`, `phone`, `email`) VALUES
 (25, 'Patrik', 'Majerčík', '+420123000456', 'majercik@inqool.cz'),
 (26, 'Tomáš', 'Kučera', '+420777507912', ''),
 (27, 'Vojtěch', 'Horák', '+420345298736', 'horak@gmail.cz'),
-(28, 'someone', 'special', '+380123875429', 'someone@someone.com'),
-(29, 'Jozef', 'Tokarčík', '+420128723000', 'tokarcik@yandex.ua');
+(29, 'Jozef', 'Tokarčík', '+420128723000', 'tokarcik@yandex.ua'),
+(30, 'Natalya', 'Lemeshchuk', '+380674844516', 'nvlem@gmail.com'),
+(31, 'Yan', 'Gorshkov', '+380123875429', 'someone@special.com'),
+(32, 'Alexei', 'Halochkin', '+380123875429', 'someone@someone.com');
 
 -- --------------------------------------------------------
 
@@ -103,7 +110,8 @@ INSERT INTO `groups` (`id`, `name`) VALUES
 (1, 'inQool'),
 (2, 'Brno'),
 (3, 'Bratislava'),
-(4, 'Stredná škola');
+(4, 'Stredná škola'),
+(5, 'Odessa');
 
 --
 -- Indexes for dumped tables
@@ -137,17 +145,17 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `contactGroups`
 --
 ALTER TABLE `contactGroups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
