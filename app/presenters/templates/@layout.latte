@@ -10,8 +10,7 @@
 	<title>My contacts{ifset title} |  {include title|stripHtml}{/ifset}</title>
 </head>
 
-<body style="background: url('{$basePath}/img/background.jpg') no-repeat center center fixed; background-size: cover;
-  ">
+<body class="bodyStyle">
 	
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" id="backgroundStyle">{$flash->message}</div>
 

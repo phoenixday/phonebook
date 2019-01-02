@@ -1,3 +1,7 @@
+.bodyStyle{
+	background: url('{$basePath}/img/background.jpg') no-repeat center center fixed; 
+	background-size: cover;
+}
 #backgroundStyle{
 	background-color: #f7f7f9; 
 	padding: 10pt;
