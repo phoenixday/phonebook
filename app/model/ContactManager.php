@@ -49,7 +49,6 @@ class ContactManager
 		}
 	}
 
-
 	public function delete($contactId)
 	{
 		$contact = $this->contacts->get($contactId); 

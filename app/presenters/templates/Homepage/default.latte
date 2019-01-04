@@ -10,8 +10,9 @@
 							</select>
 						</div>
 					</div>	
-						<div class="col-sm">
+						<div>
 							<button type="submit" class="btn btn-info" n:name="select">Show contacts</button>
+							<a n:if="$selectedGroup != 'all'" class="btn btn-dark" n:href="Group:delete $selectedGroup">Delete this group ({$selectedGroup})</a>
 						</div>
 				</div>
 		</form>

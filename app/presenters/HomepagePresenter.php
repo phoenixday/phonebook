@@ -54,6 +54,7 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 		$this->template->paginator = $paginator;
 		$this->template->contacts = array_slice($contacts, $paginator->getOffset(), $paginator->getLength());
 		$this->template->groups = $this->groupManager->getGroups();
+		$this->template->selectedGroup = $selectedGroup;
 	}
 
 	public function createComponentSelectForm()

@@ -37,4 +37,11 @@ class GroupPresenter extends Nette\Application\UI\Presenter
 		}
 		$this->redirect('Homepage:');
 	}
+
+	public function actionDelete($selectedGroup)
+	{
+		$this->groupManager->delete($selectedGroup);
+		$this->flashMessage('Group was deleted.');
+		$this->redirect('Homepage:');
+	}
 }

@@ -41,4 +41,11 @@ class GroupManager
 	{
 		$this->groups->insert($values);
 	}
+
+	public function delete($group)
+	{
+		$groupId = $this->groups->select('id')->where('name', $group);
+		$groupId->delete();
+		$this->database->table('contactGroups')->where('id_group', $groupId)->delete();
+	}
 }
